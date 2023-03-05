@@ -40,7 +40,7 @@ blank [ \t\r]
 
 {blank}+   loc.step ();
 \n+        loc.lines (yyleng); loc.step ();
-
+";"        return yy::parser::make_BR (loc);
 "-"        {
               std::cout << loc.begin.line << " " << loc.end.line << std::endl;
               return yy::parser::make_MINUS  (loc);

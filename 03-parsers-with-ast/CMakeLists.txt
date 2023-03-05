@@ -26,17 +26,9 @@ add_executable(
     driver.cpp
     ${BISON_MyParserWithAst_OUTPUTS}
     ${FLEX_MyScannerWithAst_OUTPUTS}
-    expressions/NumberExpression.cpp
-    expressions/MulExpression.cpp
-    expressions/AddExpression.cpp
-    expressions/SubstractExpression.cpp
-    expressions/DivExpression.cpp
-    expressions/IdentExpression.cpp
-    expressions/PowerExpression.cpp
-    assignments/Assignment.cpp
-    assignments/AssignmentList.cpp
+
     Program.cpp
-)
+        expressions/BinaryOp.cpp expressions/BinaryOp.h expressions/Expression.h utils/BaseTerm.h utils/BaseTerm.h visitor/Visitor.h expressions/BoolConst.cpp expressions/BoolConst.h expressions/Id.cpp expressions/Id.h expressions/Int.cpp expressions/Int.h expressions/New.cpp expressions/New.h expressions/Not.cpp expressions/Not.h declaration/Class.cpp declaration/Class.h declaration/Declaration.cpp declaration/Declaration.h utils/BaseList.cpp utils/BaseList.h utils/BaseItem.h declaration/List.h declaration/Var.cpp declaration/Var.h program/program.cpp program/program.h program/ClassMain.cpp program/ClassMain.h statements/StatementsList.cpp statements/StatementsList.h program/ClassDeclList.h scopes/Var.cpp scopes/Var.h statements/Statement.h statements/VarDecl.cpp statements/VarDecl.h statements/Conditional.cpp statements/Conditional.h)
 
 target_include_directories(
     ParserExampleWithAst PRIVATE ${ParserExampleWithAst_SOURCE_DIR}

@@ -7,6 +7,8 @@ RUN wget https://ftp.gnu.org/gnu/bison/bison-3.5.2.tar.gz && tar -zxvf bison-3.5
 RUN cd bison-3.5.2 && ./configure && make -j9 && make install && cd ..
 RUN apt-get install -y llvm
 RUN apt-get install -y flex
+RUN apt-get install -y llvm
+RUN apt-get install -y gdb
 
 RUN useradd -ms /bin/bash ubuntu
 USER ubuntu
