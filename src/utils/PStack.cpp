@@ -14,6 +14,14 @@ void PStack<T>::Push(T value) {
 }
 
 template<typename T>
-T PStack<T>::Pop() {
-    return buf.pop_back();
+T PStack<T>::PopBack() {
+    auto val = buf.back();
+    buf.pop_back();
+    return val;
+}
+
+
+template<typename T>
+void PStack<T>::Pop() {
+    buf.pop_back();
 }

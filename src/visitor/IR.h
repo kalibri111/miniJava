@@ -21,9 +21,11 @@
 #include "llvm/IR/Type.h"
 #include "llvm/IR/Verifier.h"
 #include "utils/PStack.h"
+#include "llvm/IR/Attributes.h"
 
 
 class IR: public Visitor, public std::enable_shared_from_this<IR> {
+public:
     void Visit(std::shared_ptr<Program> program) override;
     void Visit(std::shared_ptr<ClassMain> main_class) override;
     void Visit(std::shared_ptr<AssertStmt> assert_stmt) override;
@@ -44,6 +46,8 @@ class IR: public Visitor, public std::enable_shared_from_this<IR> {
     void Visit(std::shared_ptr<Var> var_decl) override;
     void Visit(std::shared_ptr<Lvalue> lvalue) override;
     int GetResult(std::shared_ptr<Program> program);
+private:
+    llvm::CallInst* ir_print(llvm::Module *mod, llvm::BasicBlock *bb, const char *format, ...);
 private:
     PStack<llvm::Value*> program_stack;
     llvm::LLVMContext* context;

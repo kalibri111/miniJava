@@ -1837,7 +1837,7 @@ switch (yytype)
         operator[] (0).move (t);
       }
 
-      /// Pop elements from the stack.
+      /// PopBack elements from the stack.
       void
       pop (std::ptrdiff_t n = 1) YY_NOEXCEPT
       {
@@ -1845,7 +1845,7 @@ switch (yytype)
           seq_.pop_back ();
       }
 
-      /// Pop all elements from the stack.
+      /// PopBack all elements from the stack.
       void
       clear () YY_NOEXCEPT
       {
@@ -1928,7 +1928,7 @@ switch (yytype)
     /// \warning the contents of \a sym.value is stolen.
     void yypush_ (const char* m, state_type s, YY_MOVE_REF (symbol_type) sym);
 
-    /// Pop \a n symbols from the stack.
+    /// PopBack \a n symbols from the stack.
     void yypop_ (int n = 1);
 
     /// Some specific tokens.
